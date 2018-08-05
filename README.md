@@ -97,6 +97,41 @@ And just like before, **if this worked, then you should see some colored pixels.
 Probably by pressing `[CTRL]+[ALT]+[F7]`.)
 
 
+## X11
+
+Note that, if you tried that command (i.e,. `cat /dev/urandom >/dev/fb0`) from X11, but it didn't work for you, there is a way to make it work from X11.
+
+First you install the _Frame Buffer Device_ driver for X11, with something like this:
+```
+sudo apt-get install xserver-xorg-video-fbdev
+```
+
+And then you create the configuration file:
+```
+/usr/share/X11/xorg.conf.d/99-fbdev.conf
+```
+
+... with contents such as:
+```
+Section "Device"
+  Identifier "myfb"
+  Driver "fbdev"
+  Option "fbdev" "/dev/fb1"
+EndSection
+```
+
+And then restart X11.
+
+The easiest way (to restart X11) if you are running a typical Linux based operating system
+(such as [elementary OS](https://elementary.io/), [Fedora](https://getfedora.org/), [openSUSE](https://www.opensuse.org/), [Mint](https://www.linuxmint.com/), [Ubuntu](https://www.ubuntu.com/], etc, or even [Linux From Scratch](http://www.linuxfromscratch.org/)),
+(on a laptop, desptop, or tower computer)
+that automatically starts X11 for you, is to just to first (completely) _shut down_ you computer (i.e., don't just _suspend_ it, it needs to be completely _shut down_), and then _turn it back on_.
+
+(Alternatively, if you are running a system that doesn't automatically start into X11 for you, you can start X11 with the command: `startx`.)
+
+(Also, if you are running a system that doesn't automatically start into X11 for you, and you don't want to create that configuration file, then you can make X11 use the _Frame Buffer Device_ by starting X11 with the command: `FRAMEBUFFER=/dev/fb1 startx`.)
+
+
 ## See Also
 
 * [The Frame Buffer Device](https://www.kernel.org/doc/Documentation/fb/framebuffer.txt)
