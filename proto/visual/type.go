@@ -1,5 +1,9 @@
 package fb_visual
 
+import (
+	"fmt"
+)
+
 type Type struct {
 	value uint32
 }
@@ -25,6 +29,6 @@ func (receiver Type) String() string {
 	case CodeFourCC:
 		return "FB_VISUAL_FOURCC"
 	default:
-		return "FB_VISUAL_<UNKNOWN>"
+		return fmt.Sprintf("FB_VISUAL_UNKNOWN(%d)", receiver.value)
 	}
 }
