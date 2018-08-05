@@ -4,6 +4,8 @@ Package **fb** provides tools for working with the Frame Buffer Device (fbdev) (
 
 The _Frame Buffer Device_ is an _easy_ way to do pixel oriented graphics programming.
 
+It is easy because you can treat the Frame Buffer Device_ as a file (that you can read from, and write to), or as memory (that you can also read from, and write to).
+
 
 ## Documention
 
@@ -24,6 +26,13 @@ Documentation on _The Frame Buffer Device_ introduces it as:
 > 
 > The device is accessed through special device nodes, usually located in the
 > /dev directory, i.e. /dev/fb*.
+
+Examples of `/dev/fb*` device nodes are:
+
+* `/dev/fb0`
+* `/dev/fb1`
+* `/dev/fb2`
+* etc.
 
 
 ## Testing
