@@ -68,7 +68,7 @@ n, err := fbdev.Read(p)
 ```
 
 Or alternatively:
-```
+```go
 var offset int64
 
 // ...
@@ -82,6 +82,26 @@ For example, you might use `Read` or `ReadAt` in that way if you wanted to creat
 **(Although, the astute reader might have noticed that we don't know the _width_ or _height_ of the resulting image, and don't know how many bytes make up a single pixel, and don't know what color format each pixel is using.)**
 
 (But we can figure those things out using `syscall.Syscall(syscall.SYS_IOCTL)`.
+More on that later.)
+
+To write to (i.e., to _draw_ to) the _Frame Buffer Device_, we can use `Write` and `WriteAt`, as in the following examples:
+```go
+n, err := fbdev.Write(b)
+```
+
+Or alternatively:
+```go
+var offset int64
+
+// ...
+
+n, err := fbdev.WriteAt(b, offset)
+
+```
+
+**(But again, the astute reader might have noticed that we don't know the _width_ or _height_ of the resulting image, and don't know how many bytes make up a single pixel, and don't know what color format each pixel is using.)**
+
+(And again we can figure those things out using `syscall.Syscall(syscall.SYS_IOCTL)`.
 More on that later.)
 
 
