@@ -35,6 +35,58 @@ Examples of `/dev/fb*` device nodes are:
 * etc.
 
 
+## Treating a Frame Buffer Device as a File
+
+The _frame buffer_ can be accessed as a file, such as the file `/dev/fb0`.
+
+(Although there can be other _Frame Buffer Device_ files.
+Ex: `/dev/fb1`, `/dev/fb2`, etc.)
+
+For instance, in Go, you might do something like:
+```go
+fbdev, err := os.Open("/dev/fb0")
+```
+... or:
+```go
+fbdev, err := os.OpenFile("/dev/fb0", O_WRONLY)
+```
+... or even:
+```go
+fbdev, err := os.OpenFile("/dev/fb0", O_RDWR)
+```
+... to _open_ the _Frame Buffer Device_ at `/dev/fb0`.
+
+Once you have done something such as that, you can then read from one of these types of files, to determine what color specific pixel values are.
+
+For example, in Go, you might do something such as:
+```go
+var buffer [307200]byte
+
+var p []byte = buffer[:]
+
+// ...
+
+n, err := fbdev.Read(p)
+```
+
+Or alternatively:
+```
+var offset int64
+
+// ...
+
+n, err := fbdev.ReadAt(p, offset)
+
+```
+
+For example, you might use `Read` or `ReadAt` in that way if you wanted to create the ability for a program to take a _screenshot_.
+
+(Although, the astute reader might have noticed that we don't know the _width_ or _height_ of the resulting image, and don't know how many bytes make up a single pixel, and don't know what color format each pixel is using.)
+
+(But we can figure those things out using `syscall.Syscall(syscall.SYS_IOCTL)`.
+More on that later.)
+
+
 ## Troubleshooting #1: Testing The Framebuffer Device
 
 One way to see if the Frame Buffer Device is working on your computer is to try to run the following command:
