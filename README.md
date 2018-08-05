@@ -2,6 +2,8 @@
 
 Package **fb** provides tools for working with the Frame Buffer Device (fbdev) (that is common on Linux based on operating systems), for the Go programming language.
 
+The _Frame Buffer Device_ is an _easy_ way to do pixel oriented graphics programming.
+
 
 ## Documention
 
@@ -73,7 +75,6 @@ And again, if you see this error message:
 
 And just like before, **if this worked, then you should see some colored pixels.**
 **At least in the top-left corner, if not filling the screen.**
-
 
 (And then, once you are done, logout of that _virtual console_, and switch back to your original _virtual console_.
 Probably by pressing `[CTRL]+[ALT]+[F7]`.)
