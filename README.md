@@ -45,11 +45,11 @@ fbdev, err := os.Open("/dev/fb0")
 ```
 ... or:
 ```go
-fbdev, err := os.OpenFile("/dev/fb0", O_WRONLY)
+fbdev, err := os.OpenFile("/dev/fb0", os.O_WRONLY)
 ```
 ... or even:
 ```go
-fbdev, err := os.OpenFile("/dev/fb0", O_RDWR)
+fbdev, err := os.OpenFile("/dev/fb0", os.O_RDWR)
 ```
 
 (If you wanted to open a different _Frame Buffer Device_, you would just replace the `name` in the `os.Open()` or `os.OpenFile()` call, from `/dev/fb0` to `/dev/fb1`, `/dev/fb2`, `/dev/fb3`, etc.)
