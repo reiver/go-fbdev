@@ -83,3 +83,4 @@ Probably by pressing `[CTRL]+[ALT]+[F7]`.)
 
 * [The Frame Buffer Device](https://www.kernel.org/doc/Documentation/fb/framebuffer.txt)
 * [The Frame Buffer Device API](https://www.kernel.org/doc/Documentation/fb/api.txt)
+* [The Frame Buffer Device Documentation](https://www.kernel.org/doc/Documentation/fb/)
