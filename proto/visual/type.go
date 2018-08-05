@@ -8,10 +8,12 @@ type Type struct {
 	value uint32
 }
 
+// Code returns the uint32 value.
 func (receiver Type) Code() uint32 {
 	return receiver.value
 }
 
+// String returns a text representation of the value.
 func (receiver Type) String() string {
 	switch receiver.value {
 	case CodeMono01:
