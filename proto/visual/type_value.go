@@ -5,5 +5,5 @@ import (
 )
 
 func (receiver Type) Value() (driver.Value, error) {
-	return int64(receiver.value)
+	return int64(receiver.value), nil
 }
