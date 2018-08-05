@@ -1,6 +1,6 @@
-# go-fb
+# go-fbdev
 
-Package **fb** provides tools for working with the Frame Buffer Device (fbdev) (that is common on Linux based on operating systems), for the Go programming language.
+Package **fbdev** provides tools for working with the Frame Buffer Device (fbdev) (that is common on Linux based on operating systems), for the Go programming language.
 
 The _Frame Buffer Device_ is an _easy_ way to do pixel oriented graphics programming.
 
@@ -9,9 +9,9 @@ It is easy because you can treat the _Frame Buffer Device_ as a file (that you c
 
 ## Documention
 
-Online documentation, which includes examples, can be found at: http://godoc.org/github.com/reiver/go-fb
+Online documentation, which includes examples, can be found at: http://godoc.org/github.com/reiver/go-fbdev
 
-[![GoDoc](https://godoc.org/github.com/reiver/go-fb?status.svg)](https://godoc.org/github.com/reiver/go-fb)
+[![GoDoc](https://godoc.org/github.com/reiver/go-fbdev?status.svg)](https://godoc.org/github.com/reiver/go-fbdev)
 
 
 ## Introduction
@@ -127,6 +127,11 @@ n, err := fbdev.WriteAt(b, offset)
 
 (And again we can figure those things out using `syscall.Syscall(syscall.SYS_IOCTL)`.
 More on that later.)
+
+
+## Memory
+
+The _frame buffer_ can also be accessed as memory, 
 
 
 ## Troubleshooting #1: Testing The Framebuffer Device
