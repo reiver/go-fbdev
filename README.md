@@ -4,7 +4,7 @@ Package **fb** provides tools for working with the Frame Buffer Device (fbdev) (
 
 The _Frame Buffer Device_ is an _easy_ way to do pixel oriented graphics programming.
 
-It is easy because you can treat the Frame Buffer Device_ as a file (that you can read from, and write to), or as memory (that you can also read from, and write to).
+It is easy because you can treat the _Frame Buffer Device_ as a file (that you can read from, and write to), or as memory (that you can also read from, and write to).
 
 
 ## Documention
