@@ -35,7 +35,7 @@ Examples of `/dev/fb*` device nodes are:
 * etc.
 
 
-## Testing
+## Troubleshooting #1: Testing The Framebuffer Device
 
 One way to see if the Frame Buffer Device is working on your computer is to try to run the following command:
 
@@ -59,7 +59,7 @@ But anyways...
 But, if that didn't work, keep on reading....
 
 
-## Virtual Consoles
+## Troubleshooting #2: Virtual Consoles
 
 Note that, if you are in X11, and this test (i.e., running `cat /dev/urandom >/dev/fb0` from a terminal in X11) didn't work for you,
 then you may need to switch to a different _virtual console_ to get this to work.
@@ -97,7 +97,7 @@ And just like before, **if this worked, then you should see some colored pixels.
 Probably by pressing `[CTRL]+[ALT]+[F7]`.)
 
 
-## X11
+## Troubleshooting #3: X11
 
 Note that, if you tried that command (i.e,. `cat /dev/urandom >/dev/fb0`) from X11, but it didn't work for you, there is a way to make it work from X11.
 
