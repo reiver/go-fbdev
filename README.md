@@ -37,12 +37,9 @@ Examples of `/dev/fb*` device nodes are:
 
 ## Treating a Frame Buffer Device as a File
 
-The _frame buffer_ can be accessed as a file, such as the file `/dev/fb0`.
+A _Frame Buffer Device_ can be accessed as a file, such as the file `/dev/fb0`, `/dev/fb1`, `/dev/fb2`, `/dev/fb3`, etc.
 
-(Although there can be other _Frame Buffer Device_ files.
-Ex: `/dev/fb1`, `/dev/fb2`, etc.)
-
-For instance, in Go, you might do something like:
+For instance, in Go, you might do something such as the following (if you wanted to open the _Frame Buffer Device_ at `/dev/fb0`):
 ```go
 fbdev, err := os.Open("/dev/fb0")
 ```
@@ -54,7 +51,8 @@ fbdev, err := os.OpenFile("/dev/fb0", O_WRONLY)
 ```go
 fbdev, err := os.OpenFile("/dev/fb0", O_RDWR)
 ```
-... to _open_ the _Frame Buffer Device_ at `/dev/fb0`.
+
+(If you wanted to open a different _Frame Buffer Device_, you would just replace the `name` in the `os.Open()` or `os.OpenFile()` call, from `/dev/fb0` to `/dev/fb1`, `/dev/fb2`, `/dev/fb3`, etc.)
 
 Once you have done something such as that, you can then read from one of these types of files, to determine what color specific pixel values are.
 
@@ -81,7 +79,7 @@ n, err := fbdev.ReadAt(p, offset)
 
 For example, you might use `Read` or `ReadAt` in that way if you wanted to create the ability for a program to take a _screenshot_.
 
-(Although, the astute reader might have noticed that we don't know the _width_ or _height_ of the resulting image, and don't know how many bytes make up a single pixel, and don't know what color format each pixel is using.)
+**(Although, the astute reader might have noticed that we don't know the _width_ or _height_ of the resulting image, and don't know how many bytes make up a single pixel, and don't know what color format each pixel is using.)**
 
 (But we can figure those things out using `syscall.Syscall(syscall.SYS_IOCTL)`.
 More on that later.)
