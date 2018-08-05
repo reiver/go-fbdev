@@ -14,7 +14,7 @@ Online documentation, which includes examples, can be found at: http://godoc.org
 [![GoDoc](https://godoc.org/github.com/reiver/go-fb?status.svg)](https://godoc.org/github.com/reiver/go-fb)
 
 
-## Description
+## Introduction
 
 Documentation on _The Frame Buffer Device_ introduces it as:
 
