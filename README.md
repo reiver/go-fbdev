@@ -61,15 +61,23 @@ But, if that didn't work, keep on reading....
 
 ## Virtual Consoles
 
-Note that, if you are in X11, and this test (i.e., running `cat /dev/urandom >/dev/fb0`) doesn't work for you, then you may need to switch to a different _virtual console_ to get this to work.
+Note that, if you are in X11, and this test (i.e., running `cat /dev/urandom >/dev/fb0` from a terminal in X11) didn't work for you,
+then you may need to switch to a different _virtual console_ to get this to work.
 
 If you are in X11, then you are probably in the _virtual console_ that can be reached by pressing `[CTRL]+[ALT]+[F7]`.
 
 So, to try the test again, first switch to a different _virtual console_.
 
-(Ex: press `[CTRL]+[ALT]+[F6]`, and then login.)
+Ex: press `[CTRL]+[ALT]+[F6]`.
 
-Next try running the same command:
+(After pressing that, you should have been switched to a different _virtual console_, and should see a terminal screen, that takes up the whole screen.
+It will probably be a a lot of black, with some white text in the top-left corner.)
+
+At this point, you will probably see a prompt that is asking you to login. So... login.
+
+(Once you are logged in....)
+
+Next try running the same command from before. I.e.,:
 ```
 cat /dev/urandom >/dev/fb0
 ```
