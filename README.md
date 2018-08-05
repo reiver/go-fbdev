@@ -59,7 +59,7 @@ But anyways...
 But, if that didn't work, keep on reading....
 
 
-# Virtual Consoles
+## Virtual Consoles
 
 Note that, if you are in X11, and this test (i.e., running `cat /dev/urandom >/dev/fb0`) doesn't work for you, then you may need to switch to a different _virtual console_ to get this to work.
 
