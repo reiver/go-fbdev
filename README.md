@@ -66,7 +66,19 @@ var p []byte = buffer[:]
 
 n, err := fbdev.Read(p)
 ```
+Or:
+```go
+var offset int64
+var whence int
 
+// ...
+
+ret, err := fbdev.Seek(offset, whence)
+
+// ...
+
+n, err := fbdev.Read(p)
+```
 Or alternatively:
 ```go
 var offset int64
@@ -88,7 +100,19 @@ To write to (i.e., to _draw_ to) the _Frame Buffer Device_, we can use `Write` a
 ```go
 n, err := fbdev.Write(b)
 ```
+Or:
+```go
+var offset int64
+var whence int
 
+// ...
+
+ret, err := fbdev.Seek(offset, whence)
+
+// ...
+
+n, err := fbdev.Write(b)
+```
 Or alternatively:
 ```go
 var offset int64
