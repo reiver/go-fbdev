@@ -237,3 +237,4 @@ that automatically starts X11 for you, is to just to first (completely) _shut do
 * [The Frame Buffer Device API](https://www.kernel.org/doc/Documentation/fb/api.txt)
 * [The Frame Buffer Device Documentation](https://www.kernel.org/doc/Documentation/fb/)
 * [Framebuffer use](https://github.com/notro/fbtft/wiki/Framebuffer-use)
+* [Framebuffer HOWTO](http://tldp.org/HOWTO/Framebuffer-HOWTO/)
